@@ -10,7 +10,12 @@ npx hardhat run --network goerli scripts/deploy.ts
 
 Verify on Etherscan
 ```shell
-// npx hardhat verify --network goerli <SMART CONTRACT ADDRESS>
+npx hardhat verify --network goerli <SMART CONTRACT ADDRESS>
+```
+
+Running Test
+```shell
+npx hardhat test ./test/BoredTiger
 ```
 
 # Contract Deploy on Goerli Testnet
