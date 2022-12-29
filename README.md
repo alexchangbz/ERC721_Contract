@@ -13,6 +13,9 @@ Verify on Etherscan
 // npx hardhat verify --network goerli <SMART CONTRACT ADDRESS>
 ```
 
+# Contract Deploy on Goerli Testnet
+Contract address: 0x35A968A5E5e3f503604072f61b2437fF21A7f35E
+
 # Sample Hardhat Project
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
