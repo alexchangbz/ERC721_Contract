@@ -40,11 +40,18 @@ describe("BoredTiger", () => {
                 await BTContract.setPaused(true)
                 const pauseStatus = await BTContract.paused()
                 expect(pauseStatus).to.equal(true)
-                await expect(BTContract.mint({ value: ethers.utils.parseEther("0.01") })).to.be.revertedWith("Function Paused")
             })
         })
 
         describe("negative test", () => {
+            it("should fail to mint once the contract is paused", async () => {
+                const { BTContract } = await deployContractFixture()
+                await BTContract.setPaused(true)
+                const pauseStatus = await BTContract.paused()
+                expect(pauseStatus).to.equal(true)
+                await expect(BTContract.mint({ value: ethers.utils.parseEther("0.01") })).to.be.revertedWith("Function Paused")
+            })
+
             it("should fail to mint token if ethers sent is not equal to 0.01", async () => {
                 const { BTContract } = await deployContractFixture()
                 await expect(BTContract.mint({ value: ethers.utils.parseEther("0.001") })).to.be.revertedWith("Please make sure your metamask have more than 0.01 ether")
