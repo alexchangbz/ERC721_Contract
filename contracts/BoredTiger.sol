@@ -19,7 +19,7 @@ contract BoredTiger is ERC721URIStorage, Ownable {
  
     function mint() public payable {
         require(paused == false, "Function Paused");
-        require(msg.value == 0.01 ether, "Please make sure your metamask have more than 0.1 ether");
+        require(msg.value == 0.01 ether, "Please make sure your metamask have more than 0.01 ether");
         sendViaCall(contractOwner);
         _mint(msg.sender, tokenId);
         _setTokenURI(tokenId, "This is the URI Data of this token");
